@@ -573,7 +573,7 @@ var ButtonModifier = function(lookupDiv) {
                 jQuery.each(cellChilds, function(child) {
                     if (cellChilds[child].tagName == "A") {
                         var link = cellChilds[child].href;
-                        if (link.indexOf("javascript:set_") != -1) {
+                        if (link.indexOf("javascript:") != -1) {
                             cellChilds[child].href = link;
                         } else {
                             var liSub = link.substring(link.lastIndexOf('/') + 1, (link.length));
@@ -622,7 +622,7 @@ function lookupFormAjaxRequest(formAction, form) {
             // Check that if spinner is already in execution then don't add new
             // spinner
             if (indicator.length == 0) {
-                jQuery("<span class='indicator'><img src='/images/ajax-loader.gif' alt='' /></span>").appendTo(screenletTitleBar);
+                jQuery("<span class='indicator'><img src='/assets/ajax-loader.gif' alt='' /></span>").appendTo(screenletTitleBar);
             }
         },
         success : function(result) {
@@ -659,7 +659,7 @@ function lookupPaginationAjaxRequest(navAction, type) {
             // Check that if spinner is already in execution then don't add new
             // spinner
             if (indicator.length == 0) {
-                jQuery("<span class='indicator'><img src='/images/ajax-loader.gif' alt='' /></span>").appendTo(screenletTitleBar);
+                jQuery("<span class='indicator'><img src='/assets/ajax-loader.gif' alt='' /></span>").appendTo(screenletTitleBar);
             }
         },
         success : function(result) {
