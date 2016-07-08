@@ -853,7 +853,7 @@ function getJSONuiLabel(uiResource, errUiLabel) {
             data: {"requiredLabel" : requiredLabelStr},
             async: false,
             success: function(data) {
-                returnVal = data[0];
+                returnVal = data[uiResource];
             }
         });
     }
