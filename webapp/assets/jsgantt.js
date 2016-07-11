@@ -1060,7 +1060,7 @@ Complete-Displays task percent complete</p>
 
             // DRAW the date format selector at bottom left.  Another potential GanttChart parameter to hide/show this selector
             vLeftTable += '</TD></TR>' +
-              '<TR><TD border=1 colspan=5 align=left style="BORDER-TOP: #efefef 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #efefef 1px solid; height=18px">&nbsp;&nbsp;Powered by <a href=http://www.jsgantt.com>jsGantt</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Format:';
+              '<TR><TD id="radFormat" border=1 colspan=7 align=left>Format:';
 		
 			if (vFormatArr.join().indexOf("minute")!=-1) { 
             if (vFormat=='minute') vLeftTable += '<INPUT TYPE=RADIO NAME="radFormat" VALUE="minute" checked>Minute';
@@ -1100,7 +1100,7 @@ Complete-Displays task percent complete</p>
 
             // Draw the Chart Rows
             vRightTable = 
-            '<TD style="width: ' + vChartWidth + 'px;" vAlign=top bgColor=#ffffff>' +
+            '<TD vAlign=top bgColor=#ffffff>' +
             '<DIV class=scroll2 id=rightside>' +
             '<TABLE style="width: ' + vChartWidth + 'px;" cellSpacing=0 cellPadding=0 border=0>' +
             '<TBODY><TR style="HEIGHT: 18px">';
@@ -1905,9 +1905,9 @@ JSGantt.folder= function (pID,ganttObj) {
             JSGantt.show(pID, 1, ganttObj);
 
                if (JSGantt.isIE()) 
-                  {JSGantt.findObj('group_'+pID).innerText = '–';}
+                  {JSGantt.findObj('group_'+pID).innerText = 'ï¿½';}
                else
-                  {JSGantt.findObj('group_'+pID).textContent = '–';}
+                  {JSGantt.findObj('group_'+pID).textContent = 'ï¿½';}
 
          }
 
@@ -1979,7 +1979,7 @@ JSGantt.show =  function (pID, pTop, ganttObj) {
          } else {
 
             if (JSGantt.isIE()) { // IE;
-               if( JSGantt.findObj('group_'+pID).innerText == '–') {
+               if( JSGantt.findObj('group_'+pID).innerText == 'ï¿½') {
                   JSGantt.findObj('child_'+vID).style.display = "";
                   JSGantt.findObj('childgrid_'+vID).style.display = "";
                   vList[i].setVisible(1);
@@ -1987,7 +1987,7 @@ JSGantt.show =  function (pID, pTop, ganttObj) {
 
             } else {
 
-               if( JSGantt.findObj('group_'+pID).textContent == '–') {
+               if( JSGantt.findObj('group_'+pID).textContent == 'ï¿½') {
                   JSGantt.findObj('child_'+vID).style.display = "";
                   JSGantt.findObj('childgrid_'+vID).style.display = "";
                   vList[i].setVisible(1);
